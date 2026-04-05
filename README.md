@@ -132,15 +132,12 @@ MyApplication/
 
 ## Screenshots
 
-_Add 3–4 images (login, menu, cart, bottom nav), e.g. under `docs/screenshots/`._
-
----
-
-## License & Note
-
-Personal **learning and portfolio** use. APIs and data are mocked. Add credits if you use third-party assets.
-
----
+![menu](docs/screenshots/Menu.png)
+![menuItem detail](docs/screenshots/MenuItem.png)
+![Login](docs/screenshots/Login.png)
+![cart](docs/screenshots/Cart.png)
+![order](docs/screenshots/Order.png)
+![order detail](docs/screenshots/Orderdetail.png)
 
 ## Contact
 
