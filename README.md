@@ -132,15 +132,15 @@ MyApplication/
 
 ## Screenshots
 
-![menu](docs/screenshots/Menu.png)
-![menuItem detail](docs/screenshots/MenuItem.png)
+![menu](docs/screenshots/menu.png)
+![menuItem detail](docs/screenshots/menuItem_detail.png)
 ![Login](docs/screenshots/Login.png)
-![cart](docs/screenshots/Cart.png)
-![order](docs/screenshots/Order.png)
-![order detail](docs/screenshots/Orderdetail.png)
+![cart](docs/screenshots/cart.png)
+![order](docs/screenshots/order.png)
+![order detail](docs/screenshots/order_detail.png)
 
 ## Contact
 
-- Name: _your name_  
-- Email: _your email_  
+- Name: Zac Feng  
+- Email: zhongqiufeng2023@gmail.com  
 - Target role: Android Intern  
