@@ -75,10 +75,10 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
             } else {
                 orderStatusText.setTextColor(0xFF888888);  // 灰色，已完成
             }
-
+            itemView.setOnClickListener(v -> {
+                if (listener != null) listener.onOrderClick(order);
+            });
             // 点击查看详情
-
-
         }
     }
 }

@@ -4,9 +4,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
 import com.example.myapplication.R;
 import com.example.myapplication.data.model.CartItem;
 import java.util.List;
@@ -56,6 +59,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         private TextView priceText;
         private TextView remarkText;
         private TextView quantityText;
+        private ImageView imageView;
         private Button addButton;
         private Button minusButton;
 
@@ -65,6 +69,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
             priceText = itemView.findViewById(R.id.text_cart_price);
             remarkText = itemView.findViewById(R.id.text_cart_remark);
             quantityText = itemView.findViewById(R.id.text_cart_quantity);
+            imageView = itemView.findViewById(R.id.image_cart);
             addButton = itemView.findViewById(R.id.button_cart_add);
             minusButton = itemView.findViewById(R.id.button_cart_minus);
         }
@@ -73,6 +78,12 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
             nameText.setText(item.getMenuItem().getName());
             priceText.setText("$" + item.getMenuItem().getPrice());
             quantityText.setText(String.valueOf(item.getQuantity()));
+            Glide.with(itemView.getContext())
+                    .load(item.getMenuItem().getImageUrl())
+                    .placeholder(R.color.black)
+                    .error(R.color.black)
+                    .centerCrop()
+                    .into(imageView);
 
             // 备注为空就隐藏
             if (item.getRemark() == null || item.getRemark().isEmpty()) {

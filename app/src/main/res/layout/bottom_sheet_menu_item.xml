@@ -7,11 +7,12 @@
     android:padding="16dp">
 
     <!-- 菜品图片 -->
-    <View
+    <ImageView
         android:id="@+id/image_detail"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="#EEEEEE" />
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="centerCrop"
+        android:background="#EEEEEE"/>
 
     <!-- 菜品名称 -->
     <TextView

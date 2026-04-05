@@ -5,9 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
 import com.example.myapplication.R;
 import com.example.myapplication.data.model.MenuItem;
 import java.util.List;
@@ -60,7 +63,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
         private TextView nameText;
         private TextView priceText;
         private TextView descriptionText;
-        private View image;
+        private ImageView imageView;
         private TextView quantityText;
         private Button addButton;
         private Button minusButton;
@@ -71,7 +74,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
             priceText = itemView.findViewById(R.id.text_menu_price);
             descriptionText = itemView.findViewById(R.id.text_menu_description);
 
-            image = itemView.findViewById(R.id.image_menu);
+            imageView = itemView.findViewById(R.id.image_menu);
 
             quantityText = itemView.findViewById(R.id.text_quantity);
             addButton = itemView.findViewById(R.id.button_add);
@@ -83,6 +86,13 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
             priceText.setText("¥" + item.getPrice());
             descriptionText.setText(item.getDescription());
             quantityText.setText(String.valueOf(item.getQuantity()));
+
+            Glide.with(itemView.getContext())
+                    .load(item.getImageUrl())
+                    .placeholder(R.color.black)
+                    .error(R.color.black)
+                    .centerCrop()
+                    .into(imageView);
 
             // 数量为0时隐藏减号和数量
             minusButton.setVisibility(item.getQuantity() > 0 ? View.VISIBLE : View.GONE);

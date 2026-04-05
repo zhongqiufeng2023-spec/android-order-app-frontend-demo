@@ -5,10 +5,11 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:padding="12dp">
-    <View
+    <ImageView
         android:id="@+id/image_cart"
         android:layout_width="80dp"
         android:layout_height="80dp"
+        android:scaleType="centerCrop"
         android:background="#EEEEEE"/>
     <LinearLayout
         android:layout_width="0dp"

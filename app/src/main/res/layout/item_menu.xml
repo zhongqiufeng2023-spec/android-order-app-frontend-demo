@@ -7,11 +7,12 @@
     android:padding="12dp">
 
     <!-- 菜品图片占位 -->
-    <View
+    <ImageView
         android:id="@+id/image_menu"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:background="#EEEEEE" />
+        android:scaleType="centerCrop"
+        android:background="#EEEEEE"/>
 
     <!-- 菜品信息 -->
     <LinearLayout

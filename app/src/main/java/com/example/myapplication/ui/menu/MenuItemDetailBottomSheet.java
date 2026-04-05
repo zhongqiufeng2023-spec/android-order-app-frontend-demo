@@ -6,11 +6,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.bumptech.glide.Glide;
 import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.data.model.MenuItem;
@@ -75,6 +77,7 @@ public class MenuItemDetailBottomSheet extends BottomSheetDialogFragment {
         TextView priceText = view.findViewById(R.id.text_detail_price);
         TextView descriptionText = view.findViewById(R.id.text_detail_description);
         TextView quantityText = view.findViewById(R.id.text_detail_quantity);
+        ImageView imageView = view.findViewById(R.id.image_detail);
         Button addButton = view.findViewById(R.id.button_detail_add);
         Button minusButton = view.findViewById(R.id.button_detail_minus);
         Button addToCartButton = view.findViewById(R.id.button_add_to_cart);
@@ -84,7 +87,12 @@ public class MenuItemDetailBottomSheet extends BottomSheetDialogFragment {
         nameText.setText(name);
         priceText.setText("¥" + price);
         descriptionText.setText(description);
-
+        Glide.with(view.getContext())
+                .load(menuItem.getImageUrl())
+                .placeholder(R.color.black)
+                .error(R.color.black)
+                .centerCrop()
+                .into(imageView);
         // 加号点击
         addButton.setOnClickListener(v -> {
             quantity++;
