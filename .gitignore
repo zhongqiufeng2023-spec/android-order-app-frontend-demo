@@ -1,15 +1,37 @@
-*.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+# Gradle
+.gradle/
+build/
+
+# Local machine / SDK path — never commit
 local.properties
+
+# IntelliJ / Android Studio
+*.iml
+.idea/
+
+# Android build outputs & intermediates
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# Java / Kotlin
+*.class
+
+# NDK / CMake
+.externalNativeBuild/
+.cxx/
+
+# Profiling / screenshots from Studio
+captures/
+
+# Signing — never commit real keys
+*.jks
+*.keystore
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
