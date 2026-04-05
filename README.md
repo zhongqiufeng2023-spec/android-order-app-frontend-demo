@@ -119,11 +119,14 @@ MyApplication/
 
 ## Possible Next Steps
 
-- [ ] **Retrofit** + real auth and menu APIs  
-- [ ] **Room** for offline cart persistence  
-- [ ] Unified **UI state** / error handling (e.g. sealed `Result`, loading flags)  
-- [ ] **Unit tests** for `ViewModel` and repositories  
-- [ ] **Hilt** for dependency injection  
+- [ ] **Spring Boot backend** – REST endpoints for auth, menu and order APIs
+- [ ] **Retrofit** – replace mock `DataSource` classes with real HTTP calls
+- [ ] **JWT auth** – replace UUID token with proper JWT; store securely on device
+- [ ] **Room** – offline cart persistence so data survives process death
+- [ ] **Real menu data** – serve dish list and images from the backend
+- [ ] **Order status push** – poll or use WebSocket to update PREPARING → COMPLETED
+- [ ] **Unit tests** – cover `ViewModel` and repository layer
+- [ ] **Hilt** – replace manual `getInstance()` singletons with dependency injection
 
 ---
 
