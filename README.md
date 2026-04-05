@@ -35,20 +35,55 @@ I wanted a focused portfolio piece for **intern applications** that shows I can:
 - **Navigation:** Jetpack Navigation + `BottomNavigationView`  
 - **Lists:** `RecyclerView` + custom `Adapter`s  
 - **Build:** Gradle (Version Catalog / `libs.versions.toml`)  
-
+- **Image Loading:** Glide
 ---
 
 ## Project Layout (High Level)
 
 ```
-app/src/main/java/.../
-├── ui/
-│   ├── login/
-│   ├── menu/
-│   ├── cart/
-│   └── order/
-├── data/                 # repositories, mock sources, models
-└── MainActivity.java     # host + navigation entry
+MyApplication/
+├── README.md
+├── .gitignore
+├── build.gradle
+├── settings.gradle
+├── gradle.properties
+├── gradlew
+├── gradlew.bat
+├── gradle/
+│   ├── libs.versions.toml         
+│   ├── gradle-daemon-jvm.properties
+│   └── wrapper/
+│       └── gradle-wrapper.properties
+│
+└── app/
+    ├── build.gradle         
+    └── src/main/
+        ├── AndroidManifest.xml
+        ├── java/com/example/myapplication/
+        │   ├── MainActivity.java
+        │   ├── data/
+        │   │   ├── Result.java
+        │   │   ├── login/            # LoginDataSource, LoginRepository
+        │   │   ├── menu/             # MenuDataSource, MenuRepository
+        │   │   ├── order/            # OrderDataSource, OrderRepository
+        │   │   └── model/            # LoggedInUser, Category, MenuItem, CartItem, Order, OrderItem…
+        │   └── ui/
+        │       ├── login/            # LoginActivity, LoginViewModel, Factory, FormState…
+        │       ├── menu/             # MenuFragment, MenuViewModel, BottomSheet, adapter/
+        │       ├── cart/             # CartFragment, CartViewModel, adapter/
+        │       └── order/            # OrderFragment, OrderViewModel, adapter/
+        │
+        └── res/
+            ├── layout/               # activity_*, fragment_*, item_*, dialog_*, bottom_sheet_*
+            ├── navigation/
+            │   └── nav_graph.xml
+            ├── menu/
+            │   └── bottom_nav_menu.xml
+            ├── values/               # strings, themes, colors, dimens…
+            ├── values-night/
+            ├── xml/                  # backup / data extraction 等
+            ├── drawable/
+            └── mipmap-*/
 ```
 
 ---
@@ -68,7 +103,10 @@ app/src/main/java/.../
 3. Run on an emulator or device.  
 
 **Mock credentials:** see `app/src/main/java/.../data/LoginDataSource.java` (update this README if you change test accounts).
-
+| Username | Password |
+|----------|----------|
+| admin    | 123456   |
+| test     | 111111   |
 ---
 
 ## What I Practiced Here
@@ -77,7 +115,6 @@ app/src/main/java/.../
 - **Scoping:** When to use `ViewModelProvider(this, …)` vs `requireActivity()` for shared cart-style state  
 - **List patterns:** `ViewHolder` caching; room to evolve from `notifyDataSetChanged()` to `DiffUtil`  
 - **Navigation:** Keeping login separate from the main graph while avoiding confusing back stacks  
-
 ---
 
 ## Possible Next Steps
